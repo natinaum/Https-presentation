@@ -8,9 +8,10 @@ Gliederung
 
 1. Grundlagen
 2. Geschichte
-3. Funktionsweiße HTTP
-4. TCP
-5. SSL/TLS
+3. Funktionsweise HTTP
+4. "Sitzungen"
+5. TCP
+6. SSL/TLS
 
 Grundlagen
 ==========
@@ -23,7 +24,7 @@ Geschichte
 
 ![](./geschichte.png)
 
-Funktionsweiße HTTP
+Funktionsweise HTTP
 ===================
 
 Verbindungsaufbau
@@ -34,7 +35,7 @@ Verbindungsaufbau
 4. Schließen der Verbindung
 
 
-Funktionsweiße HTTP
+Funktionsweise HTTP
 ===================
 
 Aufbau einer Anfrage
@@ -45,7 +46,7 @@ Beispiel:\
 \> GET /infotext.html HTTP/1.1\
 \> Host: www.example.net
 
-Funktionsweiße HTTP
+Funktionsweise HTTP
 ===================
 
 HTTP-Anfragemethoden:
@@ -61,7 +62,7 @@ HTTP-Anfragemethoden:
 - OPTIONS
 - CONNECT
 
-Funktionsweiße HTTP
+Funktionsweise HTTP
 ===================
 
 Aufbau einer Antwort
@@ -76,7 +77,7 @@ Beispiel:\
 > Content-Type: text/html 
 
 
-Funktionsweiße HTTP
+Funktionsweise HTTP
 ===================
 
 Statuscodes
@@ -91,7 +92,7 @@ Statuscodes
 | 5xx | Server-Fehler |
 
 
-Funktionsweiße HTTP
+Funktionsweise HTTP
 ===================
 
 Mögliche Header Inhalte:
@@ -100,6 +101,27 @@ Mögliche Header Inhalte:
 - Content-Language
 - Content-Type
 - Date
+
+Funktionsweise HTTP
+==================
+
+Typisches Beispiel
+-----------------
+
+![](./Fetching_a_page.png)
+
+"Sessions" mit HTTP
+========================
+
+- Cookies
+- Wiederverwenden von TCP-Verbindung
+- Pipelining (HTTP/1.1)
+- Multiplexing (HTTP/2)
+
+Vergleich
+========
+
+![](./load-master-multiplexing.png)
 
 TCP
 ===
@@ -111,3 +133,13 @@ SSL/TLS
 
 - Verschlüsselung von HTTP -> HTTPS
 - Arbeitet auf der Transportschicht (Transport Layer Security)
+
+Aushandlung
+=======
+![](./tls_handshake.png)
+
+Quellen
+======
+
+https://19yw4b240vb03ws8qm25h366-wpengine.netdna-ssl.com/wp-content/uploads/load-master-multiplexing.png
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
